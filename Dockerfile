@@ -13,6 +13,9 @@ RUN apt-get update && \
 
 ENV PATH="/opt/venv/bin:${PATH}"
 
+# Allow the Binder user to build GRASS Addons
+RUN chown -R ubuntu:ubuntu /usr/local/grass85
+
 # Copy repository into the existing user's home directory
 COPY . /home/ubuntu
 
