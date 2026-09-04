@@ -8,7 +8,9 @@ RUN apt-get update && \
     python3 -m venv /opt/venv && \
     /opt/venv/bin/pip install --no-cache-dir \
         jupyterlab \
-        notebook && \
+        notebook \
+        numpy \
+        matplotlib && \
     rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/opt/venv/bin:${PATH}"
@@ -19,6 +21,8 @@ RUN chown -R ubuntu:ubuntu /usr/local/grass85
 # Copy repository into the existing user's home directory
 COPY . /home/ubuntu
 
+# GRASS Addons are compiled with g.extension at runtime.
+# The pre-built GRASS image is made writable for the Binder user.
 RUN chown -R ubuntu:ubuntu /home/ubuntu
 
 USER ubuntu
