@@ -1,6 +1,6 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kristianfoerster/r.traveltime_paper/HEAD)
 
-# r.travltime paper repository
+# r.traveltime paper repository
 
 This repositroy includes binder environmet to test `r.traveltime` alongside a short paper describing its scientific and developemnt background
 
