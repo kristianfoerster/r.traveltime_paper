@@ -8,3 +8,5 @@ Files:
 - `Dockerfile` provides instructions to setup a fully GRASS GIS environment with jupyter notebooks
 - `paper.md` includes the fulltext of the paper
 - `traveltime.ipynb` includes the workflow in Python to install and test `r.traveltime` for the North Carolina dataset online
+
+The version described in the paper is available in a fork of the official repository: [https://github.com/kristianfoerster/grass-addons/tree/grass8/src/raster/r.traveltime](https://github.com/kristianfoerster/grass-addons/tree/grass8/src/raster/r.traveltime)
