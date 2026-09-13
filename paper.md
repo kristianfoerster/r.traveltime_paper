@@ -69,7 +69,7 @@ In November 2007, the first version of `r.traveltime` was announced via the GRAS
 [^3]: [https://github.com/OSGeo/grass-addons/tree/grass8/src/raster/r.traveltime/](https://github.com/OSGeo/grass-addons/tree/grass8/src/raster/r.traveltime/) (09 Sep 2026)
 
 # Research impact statement
-`r.traveltime` has been used in at least seven scientific publications representing six countries (see \autoref{tab:studies}. It is worth noting that it has been also applied in contexts other than the original aim of predicting floods, e.g., tool development [@minelli_rclarkepy_2010], delineation of water protection areas [@koffi_konan_determination_2014; @kabore_cartographie_2022], sediment yield [@berteni_application_2021], and spatial planning [@legarda_garzon_exploring_2020].
+`r.traveltime` has been used in at least seven scientific publications representing six countries (see \autoref{tab:studies}). It is worth noting that it has been also applied in contexts other than the original aim of predicting floods, e.g., tool development [@minelli_rclarkepy_2010], delineation of water protection areas [@koffi_konan_determination_2014; @kabore_cartographie_2022], sediment yield [@berteni_application_2021], and spatial planning [@legarda_garzon_exploring_2020].
 
 : Selected scientific applications of `r.traveltime` \label{tab:studies}
 
