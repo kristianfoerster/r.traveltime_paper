@@ -12,7 +12,7 @@ affiliations:
  - name: Weihenstephan-Triesdorf University of Applied Sciences, Institute of Ecology and Landscape, Germany
    index: 1
    ror: 00gzkxz88
-date: 04 September 2026
+date: 11 September 2026
 bibliography: paper.bib
 
 ---
@@ -37,7 +37,7 @@ Predicting flooding usually considers a temporal dimension, i.e., it is importan
 
 The rapid development of GIS in 1990s provided the technical basis to provide these flow times, based on terrain and other information, referred to as "geomorphological" unit hydrograph [@muzik_flood_1996, @kilgore_development_1997, @melesse_storm_2004]. Approaches similar to `r.traveltime`, besides its broad theretical foundation from literature, are still rare and either emerge into simplifications in representing flow length and slopes or consider more complex simulations with time steps. Apart from `r.traveltime` in GRASS GIS, there is a tool called "Isochrones variable speed" [@al-smadi_incorporating_1998] in SAGA GIS, which evolved in parallel to and independently from `r.traveltime`. Likewise, @diakakis_method_2011 describes a multi-step approach to achieve similar results in ArcGIS. Besides their similarity, different hydrological assumptions exist in these apporaches. \autoref{tab:software} provides an overview of available approaches and highlights `r.traveltime`'s position between simple and complex methods and modelling approaches, respectively.
 
-: Overwiew of different methods to study flooding under consideration the @refsgaard_terminology_1996 criteria. \label{tab:software}
+: Overwiew of different methods to study flooding under consideration of the @refsgaard_terminology_1996 criteria. \label{tab:software}
 
 | Approach | Processes |Spatial distr. | Temporal distr. | Main result | Reference |
 |---|---|---|---|---|---|
@@ -93,6 +93,6 @@ Generative AI tools were used to assist with setting up the Binder environment, 
 
 # Acknowledgements
 
-The author would like to thanks the users of `r.traveltime` for their interest in the software and their feedback. Moreover, the author is grateful to the GRASS GIS developers for maintaining the addon in their official repositories over more than 10 years from GRASS version 6 to version 8.
+The author would like to thank the users of `r.traveltime` for their interest in the software and their feedback. Moreover, the author is grateful to the GRASS GIS developers for maintaining the addon in their official repositories over more than 10 years from GRASS version 6 to version 8.
 
 # References
