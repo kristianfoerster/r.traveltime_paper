@@ -2,7 +2,7 @@
 
 # r.traveltime paper repository
 
-This repository includes a binder environment to test `r.traveltime` alongside a short paper describing its scientific and developemnt background.
+This repository includes a binder environment to test `r.traveltime` alongside a short paper describing its scientific and development background.
 
 Files:
 - `Dockerfile` provides instructions to setup a fully GRASS GIS environment with jupyter notebooks
