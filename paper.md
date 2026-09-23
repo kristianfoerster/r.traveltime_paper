@@ -19,7 +19,7 @@ bibliography: paper.bib
 
 # Summary
 
-`r.traveltime` is an addon raster module for the GRASS Geographic Information System (GIS) [@grass_development_team_grass_2026]. Based on terrain analyses, it computes a map of the travel time required for overland flow to reach the catchment's outlet from any given location within the catchment. This approach uses simplified hydrological computations [@muzik_flood_1996; @kilgore_development_1997; @melesse_storm_2004] and only requires terrain elevation maps as a minimum input. 
+`r.traveltime` is an addon raster module for the GRASS Geographic Information System (GIS) [@grass_development_team_grass_2026]. Based on terrain analyses, it computes a map of the travel time required for overland flow to reach the catchment's outlet from any given location within the catchment. This approach uses simplified hydrological computations [@muzik_flood_1996; @kilgore_development_1997;@melesse_storm_2004] and only requires terrain elevation maps as a minimum input. 
 
 \autoref{fig:example} illustrates how this works: The map of terrain elevation (\autoref{fig:example}(a)) is first analyzed in terms of flow direction (not shown) and flow accumulation, which reflects the size of the upstream catchment area (\autoref{fig:example}(b)). `r.traveltime` is designed to compute the travel time of overland flow on hillslope elements and in channel segments - a flow accumulation threshold helps to distinguish between both types of flow. This way, it links flow direction, flow accumulation and surface roughness, which are viewed as the main factors governing landscape connectivity, and computes a map of overland flow travel time (\autoref{fig:example}(c)). `r.traveltime` supports three representations of overland flow: (i) Each hillslope cell is considered individually in terms of flow length (shown in \autoref{fig:example}(c)), (ii) flow length is estimated by identifying the minimum upstream length to the ridge (watershed), or (iii) the maximum flow path is considered. The options are compared using travel-time histograms (\autoref{fig:example}(d)). These alternative formulations allow the sensitivity of travel-time estimates to the representation of upstream flow length to be explored. An independent SAGA GIS calculation using a different flow-velocity formulation is also shown ("Isochrones variable speed").
 
@@ -36,7 +36,7 @@ Predicting flooding usually considers a temporal dimension, i.e., it is importan
 
 # State of the field                                                                                                                  
 
-GIS enabled terrain-based travel time estimates, often referred to as geomorphological unit hydrographs [@muzik_flood_1996, @kilgore_development_1997, @melesse_storm_2004]. Approaches similar to `r.traveltime`, besides its broad theoretical foundation from literature, are still rare and either emerge into simplifications in representing flow length and slopes or consider more complex simulations with time steps. Apart from `r.traveltime` in GRASS GIS, there is a tool called "Isochrones variable speed" [@al-smadi_incorporating_1998] in SAGA GIS, which evolved in parallel to and independently from `r.traveltime`. Likewise, @diakakis_method_2011 describes a multi-step approach to achieve similar results in ArcGIS. Despite their similarity, the approaches differ in their hydrological assumptions (\autoref{tab:software}), highlighting `r.traveltime`'s position between simple and complex methods.
+GIS enabled terrain-based travel time estimates, often referred to as geomorphological unit hydrographs [@muzik_flood_1996;@kilgore_development_1997;@melesse_storm_2004]. Approaches similar to `r.traveltime`, besides its broad theoretical foundation from literature, are still rare and either emerge into simplifications in representing flow length and slopes or consider more complex simulations with time steps. Apart from `r.traveltime` in GRASS GIS, there is a tool called "Isochrones variable speed" [@al-smadi_incorporating_1998] in SAGA GIS, which evolved in parallel to and independently from `r.traveltime`. Likewise, @diakakis_method_2011 describes a multi-step approach to achieve similar results in ArcGIS. Despite their similarity, the approaches differ in their hydrological assumptions (\autoref{tab:software}), highlighting `r.traveltime`'s position between simple and complex methods.
 
 : Overwiew of different methods to study flooding under consideration of the @refsgaard_terminology_1996 criteria. \label{tab:software}
 
@@ -71,6 +71,10 @@ Here, `inflow()` checks for tributary cells. For each of these cells, `ttime()` 
 # Research impact statement
 `r.traveltime` has been used in at least seven scientific publications representing six countries (see \autoref{tab:studies}). It is worth noting that it has been also applied in contexts other than the original aim of predicting floods, e.g., tool development [@minelli_rclarkepy_2010], delineation of water protection areas [@koffi_konan_determination_2014; @kabore_cartographie_2022], sediment yield [@berteni_application_2021], and spatial planning [@legarda_garzon_exploring_2020].
 
+# Mathematics
+
+The mathematical description, at least for the standard calculation method ("std" in \autoref{fig:example}), is available in the historical technical description [@forster_rtraveltime_2026]. The minimum and maximum approaches include a flow length calculation before calling `ttime()` and the overland flow calculation is replaced by the approach described by @kilgore_development_1997.
+
 : Selected scientific applications of `r.traveltime` \label{tab:studies}
 
 | Reference | Location  | Objectives |
@@ -82,10 +86,6 @@ Here, `inflow()` checks for tributary cells. For each of these cells, `ttime()` 
 | @legarda_garzon_exploring_2020 | Abstracted catchments, data from UK | Histogram of travel times utlized to identify locations for natural flood management measures  |
 | @berteni_sediment_2019, @berteni_application_2021 | Guerna catchment, Italy | Derivation of a unit hydrograph for rainfall runoff and sediment yield prediction |
 | @kabore_cartographie_2022 | Barrages de Ouagadougou, Burkina Faso | Map of travel time employed to identify travel times to three reservoirs and intersection with pollution sources |
-
-# Mathematics
-
-The mathematical description, at least for the standard calculation method ("std" in \autoref{fig:example}), is available in the historical technical description [@forster_rtraveltime_2026]. The minimum and maximum approaches include a flow length calculation before calling `ttime()` and the overland flow calculation is replaced by the approach described by @kilgore_development_1997.
 
 # AI usage disclosure
 
